@@ -116,8 +116,7 @@ export default function NuevaTacticaPage() {
       const data = await res.json()
       if (!res.ok) throw new Error(data.error?.formErrors?.[0] ?? data.error ?? 'Error al guardar')
 
-      router.refresh()
-      router.push('/tacticas')
+      window.location.href = '/tacticas'
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Error desconocido')
     } finally {
